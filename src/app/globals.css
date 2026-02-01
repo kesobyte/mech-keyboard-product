@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ECECEC; /* Fog color */
+  --foreground: rgba(0, 0, 0, 0.9);
+  --foreground-muted: rgba(0, 0, 0, 0.6);
+  /* San Francisco / System Font Stack */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: inherit;
+}
