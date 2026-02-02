@@ -35,7 +35,7 @@ export default function ProductDetails() {
       </div>
 
       {/* 02. FEATURES GRID */}
-      <div className="max-w-7xl mx-auto px-6 py-24">
+      <div id="features" className="max-w-7xl mx-auto px-6 py-24">
         <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -45,8 +45,8 @@ export default function ProductDetails() {
         >
             {[
                 { title: "Gasket Mount", desc: "Isolating the plate from the case for a pure, dampened sound profile." },
-                { title: "PBT Keycaps", desc: "Double-shot molding ensures legends never fade. Textured for grip." },
-                { title: "QMK/VIA Ready", desc: "Full programmability. Remap keys and create macros on the fly." }
+                { title: "PBT Keycaps", desc: "Double-shot PBT with Japanese sublegends. Textured for grip, legends never fade." },
+                { title: "Rotary Encoder", desc: "Precision aluminum knob for volume, scroll, or custom macros. Fully programmable." }
             ].map((feature, i) => (
                 <motion.div key={i} variants={fadeUp} className="space-y-4">
                     <div className="h-px w-full bg-black/20 mb-6" />
@@ -57,24 +57,42 @@ export default function ProductDetails() {
         </motion.div>
       </div>
 
-      {/* 03. LARGE IMAGE BANNER (Placeholder logic) */}
-      <div className="w-full h-[60vh] bg-black/5 relative overflow-hidden flex items-center justify-center">
-            {/* If user had more images, one would go here. Using pattern for now. */}
-            <div className="absolute inset-0 opacity-10" 
-                style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '20px 20px' }} 
-            />
-            <motion.h2 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
-                className="text-4xl md:text-6xl font-medium tracking-tight relative z-10"
+      {/* 03. GALLERY GRID */}
+      <div id="gallery" className="w-full bg-[#ECECEC] py-24">
+        <div className="max-w-7xl mx-auto px-6">
+            <motion.h3 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="text-sm font-bold uppercase tracking-widest text-black/40 mb-12"
             >
-                Defined by density.
-            </motion.h2>
+                Gallery
+            </motion.h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[2, 1, 4, 3].map((num) => (
+                    <motion.div  
+                        key={num}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: num * 0.1 }}
+                        className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-black/5"
+                    >
+                        <img 
+                            src={`/images/gallery-${num}.png`} 
+                            alt={`Gallery image ${num}`}
+                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+                    </motion.div>
+                ))}
+            </div>
+        </div>
       </div>
 
       {/* 04. TECH SPECS */}
-      <div className="max-w-4xl mx-auto px-6 py-40">
+      <div id="specs" className="max-w-4xl mx-auto px-6 py-40">
         <motion.h3 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -91,11 +109,12 @@ export default function ProductDetails() {
             className="space-y-8"
         >
             {[
-                { label: "Layout", value: "65% (67 Keys)" },
+                { label: "Layout", value: "75% Compact (82 Keys)" },
                 { label: "Case Material", value: "6063 Aluminum" },
-                { label: "Weight", value: "1.2 kg (Assembled)" },
+                { label: "Weight", value: "1.4 kg (Assembled)" },
                 { label: "Typing Angle", value: "6.5 Degrees" },
-                { label: "PCB", value: "Hot-swappable, South-facing RGB" }
+                { label: "PCB", value: "Hot-swappable, South-facing RGB" },
+                { label: "Special", value: "Rotary Encoder Knob" }
             ].map((spec, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex flex-col md:flex-row md:items-baseline justify-between py-6 border-b border-black/10 group hover:border-black/40 transition-colors">
                     <span className="text-xl font-medium">{spec.label}</span>
@@ -106,6 +125,23 @@ export default function ProductDetails() {
       </div>
 
 
+      {/* 05. SUPPORT SECTION */}
+      <div id="support" className="bg-white/50 border-t border-black/5 py-32 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-8">Here to help.</h2>
+            <p className="text-xl text-black/60 max-w-2xl mx-auto mb-12">
+                Questions about compatibility, built-in features or shipping? Our support team is ready.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6">
+                 <button className="px-8 py-3 bg-black text-white rounded-full font-medium hover:bg-black/90 transition-all">
+                    Contact Support
+                 </button>
+                 <button className="px-8 py-3 bg-transparent border border-black/20 rounded-full font-medium hover:bg-black/5 transition-all">
+                    View FAQ
+                 </button>
+            </div>
+        </div>
+      </div>
     </section>
   );
 }

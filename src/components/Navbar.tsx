@@ -39,30 +39,24 @@ export default function Navbar() {
           
           {/* Logo */}
           <a href="/" className="text-xl font-bold tracking-tighter text-black">
-            キボド
+            ミツバチ
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a 
-                key={link.label}
-                href={link.href} 
-                className="text-sm font-medium text-black/60 hover:text-black transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-4">
-            <a 
-              href="#preorder" 
-              className="hidden sm:block text-sm font-medium text-white bg-black px-4 py-2 rounded-full hover:bg-black/80 transition-colors"
-            >
-              Pre-order
-            </a>
+          {/* Right Side Actions */}
+          <div className="flex items-center gap-8">
+            
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.label}
+                  href={link.href} 
+                  className="text-sm font-medium text-black/60 hover:text-black transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
 
             {/* Mobile Menu Button */}
             <button 

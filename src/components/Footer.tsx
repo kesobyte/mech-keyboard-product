@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Top Section: Brand + Newsletter */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             <div className="max-w-md">
-                 <h2 className="text-8xl font-bold tracking-tighter mb-6 relative left-[-4px] text-white">キ。</h2>
+                 <h2 className="text-8xl font-bold tracking-tighter mb-6 relative left-[-4px] text-white">ミツバチ</h2>
                  <p className="text-white/60 text-lg leading-relaxed">
                     Designed for the obsessed. <br />
                     Milled from solid aerospace aluminum. <br />
@@ -37,20 +37,13 @@ export default function Footer() {
 
         {/* Bottom Section: Links & Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <p className="text-white/40 text-sm">© 2024 Kibodo Inc. All rights reserved.</p>
+            <p className="text-white/40 text-sm">© 2026 Mitsubachi Inc. All rights reserved.</p>
             
             <div className="flex gap-8 text-sm font-medium">
                 <a href="#" className="text-white/80 hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" className="text-white/80 hover:text-white transition-colors">Terms of Service</a>
                 <a href="#" className="text-white/80 hover:text-white transition-colors">Shipping</a>
                 <a href="#" className="text-white/80 hover:text-white transition-colors">Returns</a>
-            </div>
-
-            <div className="flex gap-6 text-xl">
-                 {/* Social Icons could go here, using text for now */}
-                 <a href="#" className="text-white/60 hover:text-white/60 transition-colors opacity-60 hover:opacity-100">IG</a>
-                 <a href="#" className="text-white/60 hover:text-white/60 transition-colors opacity-60 hover:opacity-100">TW</a>
-                 <a href="#" className="text-white/60 hover:text-white/60 transition-colors opacity-60 hover:opacity-100">YT</a>
             </div>
         </div>
       </div>
